@@ -1,0 +1,1527 @@
+@import url(https://fonts.adobe.com/fonts/inter-variable#fonts-section);
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    background-color: #29292a;
+    margin: auto;
+
+
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #0000; 
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0000; 
+}
+
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff; 
+}
+
+.header {
+    background-color: #222327;
+    height: 73px;
+    width: 100%;
+    padding: 0 10px;
+    border-bottom: 2px solid rgba(160, 151, 151, 0.5);
+    display: grid;
+    grid-template-areas: "logo search profil";
+    grid-template-columns: 250px auto 240px;
+    position: fixed;
+    z-index: 9;
+}
+
+.menu-button {
+    grid-area: logo;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        background-color: #222327;
+        height: 73px;
+        padding: 0 10px;
+        border-bottom: 2px solid rgba(160, 151, 151, 0.5);
+        display: grid;
+        grid-template-areas: "menubtn logo search";
+        grid-template-columns: 1fr 1fr 1fr;
+        position: fixed;
+        z-index: 9;
+        width: 100%;
+    }
+
+    .menu-button {
+        grid-area: menubtn;
+        display: flex;
+        justify-self: flex-start;
+        align-self: center;
+    }
+
+    .logo {
+        grid-area: logo;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .search {
+        grid-area: search;
+        justify-self: flex-end;
+        align-self: center;
+        border: 0 none rgba(160, 151, 151, 0.0);
+        background-color: #29292a;
+        position: relative;
+        left: 30px;
+    }
+
+    .profil {
+        grid-area: profil;
+        position: absolute;
+        right: 10px;
+    }
+
+    .profile {
+        display: none;
+    }
+    .notification {
+        display: none;
+    }
+
+    .main {
+        margin-top: 73px;
+        display: grid;
+        grid-template-areas: "content content";
+        grid-template-rows: 1fr 1fr;
+        
+    }
+
+
+}
+.logo {
+    grid-area: logo;
+    justify-self: flex-start;
+    align-self: center;
+    padding: 10px 20px;
+    width: 150px;
+}
+
+.search {
+    grid-area: search;
+    justify-self: flex-start;
+    align-self: center;
+    padding: 10px 10px;
+    width: 90%;
+    border-radius: 20px;
+    border: 2px solid rgba(160, 151, 151, 0.5);
+    font-family: 'Inter', sans-serif;
+    background-color: #4a4a4f;
+}
+
+.profil {
+    grid-area: profil;
+    display: flex;
+    justify-self: flex-end;
+    align-self: center;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    position: relative;
+    right: 10px;
+}
+
+.notification {
+    margin: 0 5px;
+    padding: 5px 5px;
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 5px;
+}
+
+.profile {
+    margin: 0 5px;
+    padding: 5px 5px;
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 5px
+}
+
+.hi {
+    padding: 0px 5px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    align-items: center;
+    color: aliceblue;
+    position: relative;
+    top: 15px;
+}
+
+.main {
+    display: grid;
+    grid-template-areas: "nav content";
+    grid-template-columns: 227px auto;
+
+}
+
+.sidebar {
+    grid-area: nav;
+    height: 76vh;
+    background-color: #222327;
+    position: fixed;
+    z-index: 1;
+    top: 80px;
+    overflow-y: auto;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+.sidebar .section{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.sidebar li {
+    list-style: none;
+}
+
+.sidebar .menu{
+    width: 150px;
+    height: 40px;
+    background-color: #222327;
+    border-radius: 5px;
+    padding-left: 18px;
+    margin: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sidebar span {
+    padding-left: 10px;
+}
+.sidebar h2 {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 30px;
+
+
+
+}
+
+.sidebar .menu:hover {
+    background-color: rgba(149, 149, 149, 0.5);
+}
+
+.iconlib {
+    width: 25px;
+    height: 25px;
+}
+
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-areas: "content1 content1"
+                        "content2 content2"
+                        "content3 content3"
+                        "content4 content4";
+    grid-template-rows: fit-content fit-content;
+    padding: 20px 30px 100px 30px;
+    position: relative;
+    top: 74px;
+    z-index: 1;
+
+}
+
+.content1 {
+    grid-area: content1;
+    display: grid;
+    grid-template-areas: "mplay show1"
+                        "card1 card1";
+    grid-template-rows: fit-content fit-content;
+}
+.mostli {
+    grid-area: mplay;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.showallmostli {
+    grid-area: show1;
+    justify-self: flex-end;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+}
+
+.cardmostli {
+    grid-area: card1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.cardmostli a div:hover {
+    background-color: rgba(149, 149, 149, 0.5);
+}
+
+
+.c1 {
+    width: 150px;
+    height: 190px;
+    background-color: rgba(165, 160, 160, 0.3);
+    border-radius: 3px;
+    display: grid;
+    grid-template-areas: "cardimg1"
+                        "cardtxt1"
+                        "cardtxt11";
+    grid-template-rows: 140px 20px 20px;
+
+}
+
+.cardimg1 {
+    grid-area: cardimg1;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul1 {
+    grid-area: cardtxt1;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp1 {
+    grid-area: cardtxt11;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.c2 {
+    width: 150px;
+    height: 190px;
+    background-color: rgba(165, 160, 160, 0.3);
+    border-radius: 3px;
+    display: grid;
+    grid-template-areas: "cardimg2"
+                        "cardtxt2"
+                        "cardtxt22";
+    grid-template-rows: 140px 20px 20px;
+
+}
+
+.cardimg2 {
+    grid-area: cardimg2;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul2 {
+    grid-area: cardtxt2;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp2 {
+    grid-area: cardtxt22;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.c3 {
+    width: 150px;
+    height: 190px;
+    background-color: rgba(165, 160, 160, 0.3);
+    border-radius: 3px;
+    display: grid;
+    grid-template-areas: "cardimg3"
+                        "cardtxt3"
+                        "cardtxt33";
+    grid-template-rows: 140px 20px 20px;
+
+}
+
+.cardimg3 {
+    grid-area: cardimg3;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul3 {
+    grid-area: cardtxt3;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp3 {
+    grid-area: cardtxt33;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.c4 {
+    width: 150px;
+    height: 190px;
+    background-color: rgba(165, 160, 160, 0.3);
+    border-radius: 3px;
+    display: grid;
+    grid-template-areas: "cardimg4"
+                        "cardtxt4"
+                        "cardtxt44";
+    grid-template-rows: 140px 20px 20px;
+
+}
+
+.cardimg4 {
+    grid-area: cardimg4;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul4 {
+    grid-area: cardtxt4;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp4 {
+    grid-area: cardtxt44;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.c5 {
+    width: 150px;
+    height: 190px;
+    background-color: rgba(165, 160, 160, 0.3);
+    border-radius: 3px;
+    display: grid;
+    grid-template-areas: "cardimg5"
+                        "cardtxt5"
+                        "cardtxt55";
+    grid-template-rows: 140px 20px 20px;
+
+}
+
+.cardimg5 {
+    grid-area: cardimg5;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul5 {
+    grid-area: cardtxt5;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp5 {
+    grid-area: cardtxt55;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.c6 {
+    width: 150px;
+    height: 190px;
+    background-color: rgba(165, 160, 160, 0.3);
+    border-radius: 3px;
+    display: grid;
+    grid-template-areas: "cardimg6"
+                        "cardtxt6"
+                        "cardtxt66";
+    grid-template-rows: 140px 20px 20px;
+
+}
+
+.cardimg6 {
+    grid-area: cardimg6;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul6 {
+    grid-area: cardtxt6;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp6 {
+    grid-area: cardtxt66;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.c7 {
+    width: 150px;
+    height: 190px;
+    background-color: rgba(165, 160, 160, 0.3);
+    border-radius: 3px;
+    display: grid;
+    grid-template-areas: "cardimg7"
+                        "cardtxt7"
+                        "cardtxt77";
+    grid-template-rows: 140px 20px 20px;
+
+}
+
+.cardimg7 {
+    grid-area: cardimg7;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul7 {
+    grid-area: cardtxt7;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp7 {
+    grid-area: cardtxt77;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.content2 {
+    grid-area: content2;
+    display: grid;
+    grid-template-areas: "mpal show2"
+                            "card2 card2";
+    grid-template-rows: fit-content fit-content;
+}
+
+
+.mostal {
+    grid-area: mpal;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.showallmostal {
+    grid-area: show2;
+    justify-self: flex-end;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+}
+
+.cardmostal {
+    grid-area: card2;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.cardmostal a div:hover {
+    background-color: rgba(149, 149, 149, 0.5);
+}
+
+.cardimg11 {
+    grid-area: cardimg1;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul11 {
+    grid-area: cardtxt1;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp11 {
+    grid-area: cardtxt11;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg22 {
+    grid-area: cardimg2;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul22 {
+    grid-area: cardtxt2;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp22 {
+    grid-area: cardtxt22;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg33 {
+    grid-area: cardimg3;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul33 {
+    grid-area: cardtxt3;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp33 {
+    grid-area: cardtxt33;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg44 {
+    grid-area: cardimg4;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul44 {
+    grid-area: cardtxt4;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp44 {
+    grid-area: cardtxt44;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg55 {
+    grid-area: cardimg5;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul55 {
+    grid-area: cardtxt5;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp55 {
+    grid-area: cardtxt55;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg66 {
+    grid-area: cardimg6;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul66 {
+    grid-area: cardtxt6;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp66 {
+    grid-area: cardtxt66;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg77 {
+    grid-area: cardimg7;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul77 {
+    grid-area: cardtxt7;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp77 {
+    grid-area: cardtxt77;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+
+
+
+.content3 {
+    grid-area: content3;
+    display: grid;
+    grid-template-areas: "mpso show3"
+                        "card3 card3";
+    grid-template-rows: fit-content fit-content;
+}
+
+.mostso {
+    grid-area: mpso;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.showallmostso {
+    grid-area: show3;
+    justify-self: flex-end;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+}
+
+.cardmostso {
+    grid-area: card3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.cardmostso a div:hover {
+    background-color: rgba(149, 149, 149, 0.5);
+}
+
+.c1s {
+    width: 18vw;
+    height: 60px;
+    background-color: rgba(165, 160, 160, 0.3);
+    margin: 5px 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.cardimg1s {
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.cardimg2s {
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cardimg3s {
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cardimg4s {
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cardimg5s {
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cardimg6s {
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cardimg7s {
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cardimg8s {
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cardimg9s {
+    width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.labelcard {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    align-self: center;
+}
+
+
+.content4 {
+    grid-area: content4;
+    display: grid;
+    grid-template-areas: "mfr show4"
+                            "card4 card4";
+    grid-template-rows: fit-content fit-content;
+}
+
+.freq {
+    grid-area: mfr;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.showallfreq {
+    grid-area: show4;
+    justify-self: flex-end;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+}
+
+.cardfreq {
+    grid-area: card4;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.cardfreq a div:hover {
+    background-color: rgba(149, 149, 149, 0.5);
+}
+
+.cardimg1f {
+    grid-area: cardimg1;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judulf {
+    grid-area: cardtxt1;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artispf {
+    grid-area: cardtxt11;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg2f {
+    grid-area: cardimg2;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul2f {
+    grid-area: cardtxt2;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp2f {
+    grid-area: cardtxt22;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg3f {
+    grid-area: cardimg3;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul3f {
+    grid-area: cardtxt3;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp3f {
+    grid-area: cardtxt33;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg4f {
+    grid-area: cardimg4;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul4f {
+    grid-area: cardtxt4;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp4f {
+    grid-area: cardtxt44;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg5f {
+    grid-area: cardimg5;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul5f {
+    grid-area: cardtxt5;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp5f {
+    grid-area: cardtxt55;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg6f {
+    grid-area: cardimg6;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul6f {
+    grid-area: cardtxt6;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp6f {
+    grid-area: cardtxt66;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.cardimg7f {
+    grid-area: cardimg7;
+    justify-self: center;
+    align-self: center;
+    width: 130px;
+    height: 130px;
+    padding-top: 5px;
+}
+
+.Judul7f {
+    grid-area: cardtxt7;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.artisp7f {
+    grid-area: cardtxt77;
+    justify-self: flex-start;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(199, 199, 199);
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+
+.footer {
+    display: grid;
+    grid-template-areas: "now controler vbox";
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #222327;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 12%;
+    z-index: 10;
+}
+
+.pnow{
+    grid-area: now;
+    justify-self: flex-start;
+    align-self: center;
+    display: grid;
+    grid-template-areas: "cardnow pjudul"
+                        "cardnow partist";
+    grid-template-rows: 40px 20px;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+    padding: 5% 5px 15px 25px;
+}
+
+.cardnow {
+    grid-area: cardnow;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.pjudul {
+    grid-area: pjudul;
+    justify-self: flex-start;
+    align-self: center;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.partist {
+    grid-area: partist;
+    justify-self: flex-start;
+    align-self: center;
+    font-weight: 300;
+    font-size: 12px;
+    color: #C7C7C7;
+}
+
+.control {
+    grid-area: controler;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-areas: "atas atas"
+                        "bawah bawah";
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    bottom: 8%;
+}
+
+.atas {
+    grid-area: atas;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    position: relative;
+    top: 5px;
+    left: 3px;
+}
+
+.bawah {
+    grid-area: bawah;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    position: relative;
+    bottom: 2vh;
+}
+
+.bar {
+    width: 200px;
+    height: 5px;
+    background-color: #C7C7C7;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.time1 {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin: 0 10px;
+}
+
+.time2 {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin: 0 10px;
+}
+
+.cb {
+    margin: 0px 10px 10px 0;
+}
+
+.volume {
+    grid-area: vbox;
+    justify-self: flex-end;
+    align-self: center;
+    display: grid;
+    grid-template-areas: "vol barv";
+    position: relative;
+    bottom: 10%;
+    margin-right: 0;
+
+}
+.volimeimg {
+    grid-area: vol;
+}
+
+.volume .volumebar {
+    grid-area: barv;
+    width: 200px;
+    height: 5px;
+    background-color: #C7C7C7;
+    margin: 8px 10px;
+    border-radius: 10px;
+}
+
