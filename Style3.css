@@ -455,7 +455,7 @@ footer {
 
 }
 
-	.search {
+	.search  {
 	grid-area: profile;
 	display: flex;
 	justify-content: flex-end;
@@ -463,6 +463,12 @@ footer {
 	height: 11vh;
 	margin: auto;
 }
+
+   .cari {
+	display: none;
+   }
+
+
 
 	.search img {
 	height: 5vh;
